@@ -14,7 +14,8 @@ module.exports = {
             filename: 'remoteEntry.js',
             exposes: {
                 './ProductsIndex': './src/index'
-            }
+            },
+            shared: ['faker']
         }),
         // this will inject the script files in the html
         // eg <script src='' />
