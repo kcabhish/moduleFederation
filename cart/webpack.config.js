@@ -12,9 +12,13 @@ module.exports = {
             name: 'cart',
             filename: 'remoteEntry.js',
             exposes: {
-                './CartShow': './src/index'
+                './CartShow': './src/bootstrap'
             },
-            shared: ['faker']
+            shared: {
+                faker: {
+                    singleton: true
+                }
+            }
         }),
         // this will inject the script files in the html
         // eg <script src='' />

@@ -13,9 +13,14 @@ module.exports = {
             name: 'products',
             filename: 'remoteEntry.js',
             exposes: {
-                './ProductsIndex': './src/index'
+                './ProductsIndex': './src/bootstrap'
             },
-            shared: ['faker']
+            shared: {
+                faker: {
+                    // this setting is reuquired specially for react
+                    singleton: true
+                }
+            }
         }),
         // this will inject the script files in the html
         // eg <script src='' />
